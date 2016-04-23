@@ -1,0 +1,3 @@
+rootProject.name = 'Retrofit2Demo'
+include 'client'
+include 'server'

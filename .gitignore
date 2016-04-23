@@ -1,0 +1,15 @@
+*.iml
+
+*/build
+build
+
+.gradle/
+
+.idea/
+!.idea/copyright/
+
+local.properties
+Data/
+*.db
+
+*~
