@@ -1,6 +1,6 @@
 # Retrofit2Demo
 
-Retrofit2 源码位置 `client/src/main/java`
+Retrofit2 源码位置 [`client/src/main/java/com/github/ikidou/`](https://github.com/ikidou/Retrofit2Demo/tree/master/client/src/main/java/com/github/ikidou)
 
 
 测试接口服务器在 **server** 项目下，直接运行 [`RESTServer.main()`](server/src/main/java/com/github/ikidou/RESTServer.java) 即可启动测试服务器，所面代码示例均使用该接口(接口地址 http://localhost:4567/ ).
@@ -18,6 +18,3 @@ Retrofit2 源码位置 `client/src/main/java`
 |/form|POST|任意,最终以Json Object形式返回|用于测试Form表单，支持文件上传|
 |/headers|GET|showAll=true或false,默认false|返回自定义请求头，all=true是显示全部|
  注：以上的接口的`{id}`和`{page}`均代表一个纯数字，`/blog/{id}` 等价于 `/blog?id=XXX`
-
-
-
