@@ -1,20 +1,21 @@
 # Retrofit2Demo
 
+关于Retrofit2的使用教程见我的博客 [《你真的会用Retrofit2吗?Retrofit2完全教程》](http://www.jianshu.com/p/308f3c54abdd)
+
 Retrofit2 源码位置 [`client/src/main/java/com/github/ikidou/`](https://github.com/ikidou/Retrofit2Demo/tree/master/client/src/main/java/com/github/ikidou)
 
+License
+-------
+    Copyright 2016 ikidou
 
-测试接口服务器在 **server** 项目下，直接运行 [`RESTServer.main()`](server/src/main/java/com/github/ikidou/RESTServer.java) 即可启动测试服务器，所面代码示例均使用该接口(接口地址 http://localhost:4567/ ).
-当然你也可以自己借助 [json-server](https://github.com/typicode/json-server) 或 最新开源的[Parse](https://github.com/ParsePlatform/parse-server) 搭建一个REST API，不过都需要安装Node.js，有兴趣的可以去试试。
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-接口列表：
+        http://www.apache.org/licenses/LICENSE-2.0
 
-|地址|请求方法|参数|说明|
-|---|---|---|---|
-|/blog|GET|page={page},sort=asc或desc|分页获取Blog列表,每页10条|
-|/blog/{id}|GET|id|获取指定ID的Blog|
-|/blog|POST|{"author":"","title":"","content":""}|创建一个新Blog|
-|/blog/{id}|PUT|{"author":"","title":"","content":""} 中至少一个|修改Blog|
-|/blog/{id}|DELETE|id|删除一个Blog|
-|/form|POST|任意,最终以Json Object形式返回|用于测试Form表单，支持文件上传|
-|/headers|GET|showAll=true或false,默认false|返回自定义请求头，all=true是显示全部|
- 注：以上的接口的`{id}`和`{page}`均代表一个纯数字，`/blog/{id}` 等价于 `/blog?id=XXX`
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
