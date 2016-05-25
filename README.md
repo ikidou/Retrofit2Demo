@@ -4,6 +4,16 @@
 
 Retrofit2 源码位置 [`client/src/main/java/com/github/ikidou/`](https://github.com/ikidou/Retrofit2Demo/tree/master/client/src/main/java/com/github/ikidou)
 
+Android Studio 用户需要注意：
+
+该项目中没有的配置文件，也不是Android项目，所以打开后**可能会报错**，请按下面的步骤解决：
+
+1. **File -> Project Structure (Ctrl+Alt+Shift+S)**,并保证配置符合下图的要求后保存。  
+![项目设置1](jdk_setting.png)
+
+2. 打开右侧的Gradle面板，刷新项目依赖。  
+![项目设置2](gradle_setting.png)
+
 License
 -------
     Copyright 2016 ikidou
