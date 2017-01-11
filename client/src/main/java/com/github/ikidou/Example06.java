@@ -35,8 +35,7 @@ import retrofit2.http.Path;
 public class Example06 {
     public interface BlogService {
         @GET("blog/{id}")
-            //这里的{id} 表示是一个变量
-        Call<Result<Blog>> getFirstBlog(/** 这里的id表示的是上面的{id} */@Path("id") int id);
+        Call<Result<Blog>> getBlog(@Path("id") int id);
     }
 
     public static void main(String[] args) {
@@ -53,7 +52,7 @@ public class Example06 {
 
 
         BlogService service = retrofit.create(BlogService.class);
-        Call<Result<Blog>> call = service.getFirstBlog(2);
+        Call<Result<Blog>> call = service.getBlog(2);
         call.enqueue(new Callback<Result<Blog>>() {
             @Override
             public void onResponse(Call<Result<Blog>> call, Response<Result<Blog>> response) {

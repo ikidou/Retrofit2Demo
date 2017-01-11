@@ -33,7 +33,7 @@ public class Example02 {
          * hasBody表示是否有请求体
          */
         @HTTP(method = "get", path = "blog/{id}", hasBody = false)
-        Call<ResponseBody> getFirstBlog(@Path("id") int id);
+        Call<ResponseBody> getBlog(@Path("id") int id);
     }
 
     public static void main(String[] args) {
@@ -42,9 +42,7 @@ public class Example02 {
                 .build();
 
         BlogService service = retrofit.create(BlogService.class);
-        Call<ResponseBody> call = service.getFirstBlog(2);
+        Call<ResponseBody> call = service.getBlog(2);
         ResponseBodyPrinter.printResponseBody(call);
     }
-
-
 }

@@ -27,6 +27,7 @@ import com.j256.ormlite.support.DatabaseConnection;
 import com.j256.ormlite.table.TableUtils;
 
 import java.io.File;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,22 +38,22 @@ public class DB {
     }
 
     public static void init() {
-        File dbfile = new File("Data/data.db");
+        File dbFile = new File("Data/data.db");
         ConnectionSource source = null;
         try {
             source = DB.getConnectionSource();
-            if (!dbfile.exists()) {
-                File parentFile = dbfile.getParentFile();
+            if (!dbFile.exists()) {
+                File parentFile = dbFile.getParentFile();
                 if (!parentFile.exists()) {
                     parentFile.mkdir();
                 }
                 TableUtils.createTable(source, Blog.class);
-                List<Blog> blogs = genBlogs();
+                List<Blog> blogList = generateDefaultBlogList();
                 Dao<Blog, Long> blogDao = DaoManager.createDao(source, Blog.class);
                 DatabaseConnection databaseConnection = blogDao.startThreadConnection();
                 boolean autoCommit = databaseConnection.isAutoCommit();
                 databaseConnection.setAutoCommit(false);
-                for (Blog blog : blogs) {
+                for (Blog blog : blogList) {
                     blogDao.create(blog);
                 }
                 blogDao.endThreadConnection(databaseConnection);
@@ -66,22 +67,22 @@ public class DB {
                 if (source != null) {
                     source.close();
                 }
-            } catch (SQLException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    private static List<Blog> genBlogs() {
-        List<Blog> blogs = new ArrayList<>();
+    private static List<Blog> generateDefaultBlogList() {
+        List<Blog> blogList = new ArrayList<>();
 
         for (int i = 0; i < 15; i++) {
             Blog blog = new Blog();
             blog.author = "怪盗kidou";
             blog.title = "Retrofit2 测试" + (i + 1);
             blog.content = "这里是 Retrofit2 Demo 测试服务器" + (i + 1);
-            blogs.add(blog);
+            blogList.add(blog);
         }
-        return blogs;
+        return blogList;
     }
 }

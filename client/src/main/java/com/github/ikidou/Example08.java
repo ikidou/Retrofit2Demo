@@ -34,7 +34,7 @@ import rx.Subscriber;
 import rx.schedulers.Schedulers;
 
 /**
- * [Retrofit Converter 序列化]源码
+ * [Retrofit CallAdapter rxJava]源码
  */
 public class Example08 {
     public interface BlogService {

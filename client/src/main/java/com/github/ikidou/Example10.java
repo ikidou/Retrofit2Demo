@@ -29,13 +29,12 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 /**
- * [Retrofit 自定义Converter]源码
+ * [Retrofit 自定义 CallAdapter]源码
  */
 public class Example10 {
     public interface BlogService {
         @GET("blog/{id}")
-            //这里的{id} 表示是一个变量
-        CustomCall<String> getFirstBlog(/** 这里的id表示的是上面的{id} */@Path("id") int id);
+        CustomCall<String> getBlog(@Path("id") int id);
     }
 
     public static class CustomCall<R> {
@@ -99,7 +98,7 @@ public class Example10 {
                 .build();
 
         BlogService service = retrofit.create(BlogService.class);
-        CustomCall<String> call = service.getFirstBlog(2);
+        CustomCall<String> call = service.getBlog(2);
         try {
             String result = call.get();
             System.out.println(result);
