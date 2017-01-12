@@ -72,12 +72,15 @@ public class Example03 {
         @POST("/form")
         @Multipart
         Call<ResponseBody> testFileUpload2(@PartMap Map<String, RequestBody> args, @Part MultipartBody.Part file);
+
+        @POST("/form")
+        @Multipart
+        Call<ResponseBody> testFileUpload3(@PartMap Map<String, RequestBody> args);
     }
 
     public static void main(String[] args) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://localhost:4567/")
-                .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         BlogService service = retrofit.create(BlogService.class);
@@ -122,5 +125,18 @@ public class Example03 {
         //fileUpload2Args.put("file", file);
         Call<ResponseBody> call4 = service.testFileUpload2(fileUpload2Args, filePart); //单独处理文件
         ResponseBodyPrinter.printResponseBody(call4);
+
+        //===================================================
+        // 还有一种比较hack的方式可以实现文件上传，
+        // 上面说过被当成文件上传的必要条件就是 Content-Disposition 请求头中必须要有 filename="xxx" 才会被当成文件
+        // 所有我们在写文件名的时候可以拼把 filename="XXX" 也拼接上去，
+        // 即文件名变成  表单键名"; filename="文件名  （两端的引号会自动加，所以这里不加）也可以实现，但是不推荐方式
+
+        Map<String, RequestBody> fileUpload3Args = new HashMap<>();
+        fileUpload3Args.put("name",name);
+        fileUpload3Args.put("age",age);
+        fileUpload3Args.put("file\"; filename=\"test.txt",file);
+        Call<ResponseBody> testFileUpload3 = service.testFileUpload3(fileUpload3Args);
+        ResponseBodyPrinter.printResponseBody(testFileUpload3);
     }
 }

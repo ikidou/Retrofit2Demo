@@ -60,9 +60,5 @@ public class Example01 {
                 t.printStackTrace();
             }
         });
-
-        Response<ResponseBody> execute = call.execute();
     }
-
-
 }

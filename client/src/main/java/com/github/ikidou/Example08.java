@@ -78,9 +78,5 @@ public class Example08 {
                         System.out.println(blogsResult);
                     }
                 });
-        // 顺便说一句：不要为了使用RxJava而使用RxJava，把它用在该用它的地方。
-
     }
-
-
 }

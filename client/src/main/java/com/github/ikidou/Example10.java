@@ -106,6 +106,4 @@ public class Example10 {
             e.printStackTrace();
         }
     }
-
-
 }

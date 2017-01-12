@@ -45,8 +45,5 @@ public class Example04 {
         //演示 @Headers 和 @Header
         Call<ResponseBody> call1 = service.testHeader("ikidou");
         ResponseBodyPrinter.printResponseBody(call1);
-
     }
-
-
 }

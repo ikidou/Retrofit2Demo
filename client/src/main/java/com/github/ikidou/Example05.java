@@ -41,8 +41,6 @@ public class Example05 {
     }
 
     public static void main(String[] args) {
-
-
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://localhost:4567/")
                 .build();
@@ -52,8 +50,5 @@ public class Example05 {
         //演示 @Headers 和 @Header
         Call<ResponseBody> call1 = service.testUrlAndQuery("headers",false);
         ResponseBodyPrinter.printResponseBody(call1);
-
     }
-
-
 }
