@@ -32,7 +32,7 @@ import spark.Response;
 import spark.Spark;
 
 public class RESTServer {
-    static final String TYPE = "application/json";
+    static final String TYPE = "application/json; charset=UTF-8";
 
     public static void main(String[] args) throws SQLException {
         DB.init();

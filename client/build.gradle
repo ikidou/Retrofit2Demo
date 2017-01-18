@@ -15,6 +15,7 @@
  */
 
 apply plugin: 'java'
+compileJava.options.encoding = "UTF-8"
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
