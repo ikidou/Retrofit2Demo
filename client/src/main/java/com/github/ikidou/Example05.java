@@ -30,8 +30,8 @@ public class Example05 {
     public interface BlogService {
         /**
          * 当GET、POST...HTTP等方法中没有设置Url时，则必须使用 {@link Url}提供
-         * 对于Query和QueryMap，如果不是String（或Map的第个泛型参数不是String）时
-         * 会被调用toString
+         * 对于Query和QueryMap，如果不是String（或Map的第二个泛型参数不是String）时
+         * 会被默认会调用toString转换成String类型
          * Url支持的类型有 okhttp3.HttpUrl, String, java.net.URI, android.net.Uri
          * {@link retrofit2.http.QueryMap} 用法和{@link retrofit2.http.FieldMap} 用法一样，不再说明
          */
