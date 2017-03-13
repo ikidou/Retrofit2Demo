@@ -28,11 +28,11 @@ import retrofit2.http.Path;
 public class Example02 {
     public interface BlogService {
         /**
-         * method 表示请求的方法，不区分大小写
-         * path 表示路径
-         * hasBody 表示是否有请求体
+         * method 表示请求的方法，区分大小写，retrofit 不会做处理
+         * path表示路径
+         * hasBody表示是否有请求体
          */
-        @HTTP(method = "get", path = "blog/{id}", hasBody = false)
+        @HTTP(method = "GET", path = "blog/{id}", hasBody = false)
         Call<ResponseBody> getBlog(@Path("id") int id);
     }
 
