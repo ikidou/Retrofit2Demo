@@ -4,7 +4,9 @@
 
 Retrofit2 源码位置 [`client/src/main/java/com/github/ikidou/`](https://github.com/ikidou/Retrofit2Demo/tree/master/client/src/main/java/com/github/ikidou)
 
-Android Studio 用户需要注意：
+配套 Server 运行方式：找到[`server/src/main/java/com/github/ikidou/RESTServer.java`](https://github.com/ikidou/Retrofit2Demo/blob/master/server/src/main/java/com/github/ikidou/RESTServer.java) 直接右键运行即可
+
+## Android Studio 用户需要注意：
 
 该项目中没有的配置文件，也不是Android项目，所以打开后**可能会报错**，请按下面的步骤解决：
 
@@ -13,6 +15,13 @@ Android Studio 用户需要注意：
 
 2. 打开右侧的Gradle面板，刷新项目依赖。  
 ![项目设置2](gradle_setting.png)
+
+## 解决 找不到或无法加载主类
+
+- Android Studio: 在运行之前先Build
+- Idea : 请按下图的配置修改（适用于所有标准Java Gradle项目）
+
+![IDEA 运行配置](idea_config.png)
 
 License
 -------
