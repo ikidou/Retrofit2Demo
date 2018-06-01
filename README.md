@@ -19,9 +19,9 @@ Retrofit2 源码位置 [`client/src/main/java/com/github/ikidou/`](https://githu
 ## 解决 找不到或无法加载主类
 
 - Android Studio: 在运行之前先Build
-- Idea : 请按下图的配置修改（适用于所有标准Java Gradle项目）
+- Idea : 请按下图的配置修改（适用于所有标准Java Gradle项目）
 
-![IDEA 运行配置](idea_config.png)
+![IDEA 运行配置](idea_gradle.png)
 
 License
 -------
